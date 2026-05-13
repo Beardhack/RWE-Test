@@ -1,0 +1,26 @@
+{
+  "counts": {
+    "n_total": 1800,
+    "n_glp1": 714,
+    "n_dpp4": 1086,
+    "events_glp1": 125,
+    "events_dpp4": 213
+  },
+  "effect_estimates": {
+    "risk_glp1": 0.18218570647618906,
+    "risk_dpp4": 0.18618899040125245,
+    "risk_difference": -0.004003283925063383,
+    "risk_ratio": 0.9784988150135194
+  },
+  "bootstrap_rd_ci": [
+    -0.035130668286198485,
+    0.03264453613801108
+  ],
+  "diagnostics": {
+    "max_abs_smd_before": 0.3202,
+    "max_abs_smd_after": 0.0167,
+    "weight_cap_99pct": 4.296437869338822
+  },
+  "seed": 20260513,
+  "bootstraps": 100
+}
