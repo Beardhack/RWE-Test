@@ -23,27 +23,6 @@ python -m http.server 8000 --directory dashboard
 
 Open <http://localhost:8000> to view the dashboard.
 
-## Hosting on GitHub Pages
-
-This repo includes a GitHub Actions workflow at `.github/workflows/deploy-pages.yml` that publishes the static dashboard in `dashboard/` to GitHub Pages. The workflow regenerates the deterministic demo artifacts with `python src/rwe_demo.py`, copies the dashboard plus selected `output/` and `docs/` files into a Pages artifact, and deploys it.
-
-To enable hosting:
-
-1. Push this repository to GitHub on a `main` branch.
-2. In GitHub, open **Settings → Pages**.
-3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-4. Push to `main` or run the **Deploy RWE demo dashboard to GitHub Pages** workflow manually from the **Actions** tab.
-5. After the workflow completes, the site will be available at `https://<owner>.github.io/<repo>/`.
-
-For local preview before publishing, run:
-
-```bash
-python src/rwe_demo.py
-python -m http.server 8000 --directory dashboard
-```
-
-Then open <http://localhost:8000>.
-
 ## Reproducibility
 
 The script uses only the Python standard library and a fixed random seed. It regenerates all synthetic data and output artifacts from scratch.
