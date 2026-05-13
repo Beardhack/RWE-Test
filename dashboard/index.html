@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RWE Methods Demo Dashboard</title><style>
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;margin:0;background:#f7f8fb;color:#172033}header{background:#18345a;color:white;padding:28px 40px}main{padding:28px 40px;max-width:1180px;margin:auto}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.card{background:white;border:1px solid #e2e7f0;border-radius:14px;padding:18px;box-shadow:0 1px 8px #0000000c}.metric{font-size:34px;font-weight:800;color:#18345a}.warn{background:#fff4d6;border-color:#f3d37a}table{border-collapse:collapse;width:100%}td,th{padding:9px;border-bottom:1px solid #edf0f5;text-align:left}.bar-row{display:grid;grid-template-columns:190px 1fr 70px;gap:10px;align-items:center;margin:7px 0}.bar{height:12px;background:#e9eef6;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:#3178c6}code{background:#eef2f7;padding:2px 5px;border-radius:5px}</style></head>
+<body><header><h1>GLP-1 RA vs DPP-4 Inhibitor RWE Methods Demo</h1><p>12-month all-cause hospitalization risk in a synthetic new-user active-comparator cohort.</p></header><main>
+<section class="card warn"><b>Methodology demonstration only.</b> Data are synthetic claims-like records generated with seed <code>20260513</code>; estimates are not clinical evidence.</section>
+<h2>Cohort</h2><section class="grid"><div class="card"><div class="metric">1,800</div><p>Eligible new users</p></div><div class="card"><div class="metric">714</div><p>GLP-1 RA initiators</p></div><div class="card"><div class="metric">1,086</div><p>DPP-4 inhibitor initiators</p></div><div class="card"><div class="metric">338</div><p>12-month hospitalization events</p></div></section>
+<h2>Weighted effect estimates</h2><section class="grid"><div class="card"><div class="metric">18.2%</div><p>Weighted risk: GLP-1 RA</p></div><div class="card"><div class="metric">18.6%</div><p>Weighted risk: DPP-4 inhibitor</p></div><div class="card"><div class="metric">-0.4 pp</div><p>Risk difference; bootstrap 95% CI -3.5 to +3.3 pp</p></div><div class="card"><div class="metric">0.98</div><p>Risk ratio</p></div></section>
+<h2>Balance diagnostics</h2><section class="card"><p>Maximum absolute SMD changed from 0.320 before weighting to 0.017 after IPTW.</p><div class="bar-row"><span>age</span><div class="bar"><i style="width:6.2%"></i></div><b>-0.016</b></div>
+<div class="bar-row"><span>female</span><div class="bar"><i style="width:2.8%"></i></div><b>-0.007</b></div>
+<div class="bar-row"><span>black</span><div class="bar"><i style="width:0.5%"></i></div><b>-0.001</b></div>
+<div class="bar-row"><span>hispanic</span><div class="bar"><i style="width:1.8%"></i></div><b>+0.004</b></div>
+<div class="bar-row"><span>dual_eligible</span><div class="bar"><i style="width:2.4%"></i></div><b>-0.006</b></div>
+<div class="bar-row"><span>index_year_2021</span><div class="bar"><i style="width:1.1%"></i></div><b>-0.003</b></div>
+<div class="bar-row"><span>index_year_2022</span><div class="bar"><i style="width:3.2%"></i></div><b>+0.008</b></div>
+<div class="bar-row"><span>obesity</span><div class="bar"><i style="width:4.6%"></i></div><b>+0.012</b></div>
+<div class="bar-row"><span>ckd</span><div class="bar"><i style="width:5.4%"></i></div><b>-0.013</b></div>
+<div class="bar-row"><span>heart_failure</span><div class="bar"><i style="width:1.4%"></i></div><b>-0.003</b></div>
+<div class="bar-row"><span>ascvd</span><div class="bar"><i style="width:0.8%"></i></div><b>+0.002</b></div>
+<div class="bar-row"><span>diabetes_complication</span><div class="bar"><i style="width:1.6%"></i></div><b>-0.004</b></div>
+<div class="bar-row"><span>prior_hosp</span><div class="bar"><i style="width:6.7%"></i></div><b>-0.017</b></div>
+<div class="bar-row"><span>ed_visit</span><div class="bar"><i style="width:5.0%"></i></div><b>-0.012</b></div>
+<div class="bar-row"><span>endocrinology_visit</span><div class="bar"><i style="width:2.8%"></i></div><b>+0.007</b></div>
+<div class="bar-row"><span>metformin</span><div class="bar"><i style="width:0.4%"></i></div><b>+0.001</b></div>
+<div class="bar-row"><span>insulin</span><div class="bar"><i style="width:1.0%"></i></div><b>+0.003</b></div>
+<div class="bar-row"><span>sulfonylurea</span><div class="bar"><i style="width:2.9%"></i></div><b>+0.007</b></div>
+<div class="bar-row"><span>sglt2_inhibitor</span><div class="bar"><i style="width:3.8%"></i></div><b>+0.010</b></div>
+<div class="bar-row"><span>statin</span><div class="bar"><i style="width:2.7%"></i></div><b>-0.007</b></div>
+<div class="bar-row"><span>ace_arb</span><div class="bar"><i style="width:2.1%"></i></div><b>+0.005</b></div>
+<div class="bar-row"><span>beta_blocker</span><div class="bar"><i style="width:1.8%"></i></div><b>+0.004</b></div>
+<div class="bar-row"><span>loop_diuretic</span><div class="bar"><i style="width:1.2%"></i></div><b>-0.003</b></div></section>
+<h2>Protocol snapshot</h2><section class="card"><table><tr><th>Component</th><th>Operational definition</th></tr><tr><td>Eligibility</td><td>Adults with baseline T2DM, continuous enrollment, and no baseline comparator-class use.</td></tr><tr><td>Index</td><td>First GLP-1 RA or DPP-4 inhibitor dispensing.</td></tr><tr><td>Outcome</td><td>Any all-cause inpatient admission within 365 days.</td></tr><tr><td>Adjustment</td><td>Propensity-score IPTW with demographics, comorbidities, utilization, and baseline medications.</td></tr></table></section>
+</main></body></html>
